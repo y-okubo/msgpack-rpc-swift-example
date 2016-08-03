@@ -26,6 +26,7 @@
 /* Begin PBXFileReference section */
 		06BA8C0D1D51F179007987C2 /* MsgpackRpcSwiftExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MsgpackRpcSwiftExample; sourceTree = BUILT_PRODUCTS_DIR; };
 		06BA8C101D51F179007987C2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		06EE0E181D51F2C6000F5B5B /* MsgpackRpcSwiftExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MsgpackRpcSwiftExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		1D64DB37BB1F6F34067DA877 /* Pods-MsgpackRpcSwiftExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MsgpackRpcSwiftExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MsgpackRpcSwiftExample/Pods-MsgpackRpcSwiftExample.debug.xcconfig"; sourceTree = "<group>"; };
 		444E64BF638796EA2660F2D0 /* Pods-MsgpackRpcSwiftExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MsgpackRpcSwiftExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MsgpackRpcSwiftExample/Pods-MsgpackRpcSwiftExample.release.xcconfig"; sourceTree = "<group>"; };
 		C404B74F3EA11F34AFE4BCE8 /* libPods-MsgpackRpcSwiftExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MsgpackRpcSwiftExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				06BA8C101D51F179007987C2 /* main.swift */,
+				06EE0E181D51F2C6000F5B5B /* MsgpackRpcSwiftExample-Bridging-Header.h */,
 			);
 			path = MsgpackRpcSwiftExample;
 			sourceTree = "<group>";
@@ -272,6 +274,7 @@
 			baseConfigurationReference = 1D64DB37BB1F6F34067DA877 /* Pods-MsgpackRpcSwiftExample.debug.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MsgpackRpcSwiftExample/MsgpackRpcSwiftExample-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -280,6 +283,7 @@
 			baseConfigurationReference = 444E64BF638796EA2660F2D0 /* Pods-MsgpackRpcSwiftExample.release.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MsgpackRpcSwiftExample/MsgpackRpcSwiftExample-Bridging-Header.h";
 			};
 			name = Release;
 		};

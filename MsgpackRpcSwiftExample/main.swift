@@ -8,5 +8,13 @@
 
 import Foundation
 
-print("Hello, World!")
+var client: MPMessagePackClient = MPMessagePackClient()
+var server: MPMessagePackServer = MPMessagePackServer()
 
+client.openWithHost("127.0.0.1", port: 5000, completion: {error in
+    client.sendRequestWithMethod("echo", params: ["Call From Swift"], messageId: 0, completion: {error, result in
+        print(result)
+    })
+})
+
+NSRunLoop.currentRunLoop().run()

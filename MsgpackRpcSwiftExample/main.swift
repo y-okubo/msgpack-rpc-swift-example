@@ -8,8 +8,15 @@
 
 import Foundation
 
+func serverRequestHandler(messageId: NSNumber?, method: String?, params: [AnyObject]?, completion: (MPRequestCompletion)?) {
+    print(method!)
+    print(params!)
+    completion!(nil, "OK")
+}
+
+// Client
+
 var client: MPMessagePackClient = MPMessagePackClient()
-var server: MPMessagePackServer = MPMessagePackServer()
 
 client.openWithHost("127.0.0.1", port: 5000, completion: {error in
     client.sendRequestWithMethod("echo", params: ["Call From Swift"], messageId: 0, completion: {error, result in
@@ -17,4 +24,18 @@ client.openWithHost("127.0.0.1", port: 5000, completion: {error in
     })
 })
 
+// Server
+
+var server: MPMessagePackServer = MPMessagePackServer()
+
+server.requestHandler = serverRequestHandler
+
+do {
+    try server.openWithPort(5001)
+}
+catch let error as NSError {
+    print(error)
+}
+
+// Waiting
 NSRunLoop.currentRunLoop().run()
